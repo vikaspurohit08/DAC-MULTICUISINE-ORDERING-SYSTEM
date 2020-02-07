@@ -1,0 +1,12 @@
+.circle {
+    width: 350px;
+    height: 350px;
+    background:white;
+    -moz-border-radius: 250px;
+    -webkit-border-radius: 250px;
+    border-radius: 250px;
+}
+
+/* .circle:hover {
+    opacity: 0.8;
+} */

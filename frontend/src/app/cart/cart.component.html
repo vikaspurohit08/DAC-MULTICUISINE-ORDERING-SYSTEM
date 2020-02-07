@@ -1,0 +1,56 @@
+<br>
+
+<h2 style="padding-left: 600px;">CART</h2>
+<hr>
+
+<form #cartForm="ngForm" (ngSubmit)="cart(cartForm)" class="form-inline" >
+    <table style="margin-left: 100px;" class="table table-striped table-hover">
+        <tr *ngFor="let order of orderlist">
+            <td>
+                Order Id : 
+                {{order.o_id}}
+                <tr *ngFor="let fooditems of order.fooditems">
+                    <td style="width: 200px;">
+                        Category :  
+                        {{fooditems.category}}
+                    </td>
+                    
+                    <td style="width: 200px;">
+                        Name :  
+                        {{fooditems.item_name}}
+                    </td>
+                    
+                    <td style="width: 100px;">
+                        Price :
+                        {{fooditems.unit_price}}
+                    </td>
+                    
+                    <td style="width: 100px;">
+                        Quantity : 
+                        {{order.quantity}}
+                    </td>
+                    <td>Sub Total : 
+                        <input ng-model=value name="Total" type="text" value="{{order.quantity*fooditems.unit_price}}" readonly>
+                    </td>
+                    
+                    <!-- <td>
+                        <input type="button" class="btn btn-danger" (click)="remove(order.o_id)" value="Remove">
+                    </td> -->
+                    <br>
+                    <br>
+                </tr>
+                <tr *ngFor="let fooditems of order.fooditems">
+                    <td>Total : 
+                        <input name="Total" value="{{order.quantity*fooditems.unit_price}}" type="text" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;">
+                        <input type="submit" class="btn btn-primary" value="CheckOut">
+                    </td>
+                </tr>
+                <hr>
+            </td>
+        </tr>
+    </table>
+</form>

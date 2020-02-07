@@ -1,0 +1,51 @@
+<div class="table-responsive" style="text-align: center;margin-left: 400px;margin-top: 0px;margin-right: 300px;">
+        <form #myForm="ngForm" (ngSubmit)="register(myForm)" class="form-inline" role="form">
+        <table class="table table-hover">
+            <thead>
+                        <tr><td colspan="2" style="text-align: center;"><img style="width: 150px;height: 150px;" src="../../assets/food (1).jpg"></td></tr>
+                <tr><td colspan="2"><h1 style="text-align:center;font-size: 30px;">Let's Get Started</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">First Name</td>
+                    <td><input class="form-control" ngModel name="firstname" required="required" type="text"  id="firstname" placeholder="Enter First Name"></td>
+                </tr>
+                <tr> 
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Last Name</td>
+                    <td><input class="form-control" ngModel name="lastname" required="required" type="text"  id="lastname" placeholder="Enter Last Name"></td>
+                </tr>
+                <tr> 
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Email Address</td>
+                <td><input class="form-control" ngModel name="email" type="email" required="required"  id="email" placeholder="Enter Email Address"></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Contact</td>
+                    <td><input class="form-control" ngModel name="contact" type="number" required="required"  id="contact" placeholder="Enter Contact Details"></td></tr>
+                <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Password</td>
+                    <td><input class="form-control" ngModel name="password" type="password" required="required" id="password" placeholder="Enter Password"></td>        
+                </tr>
+                <!-- <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Role</td>
+                    <td >
+                        <input type="radio" name="role" required="required" value="CUSTOMER" checked ngModel>CUSTOMER
+                    </td>   
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Otp</td>
+                    <td>
+                        <input type="text" ngModel name="otp" value="123456">
+                    </td>
+                </tr> -->
+                <tr>
+                    <td colspan="2" style="padding-top: 10px;padding-bottom: 10px;"><button style="font-size: 15px;" type="submit" class="btn btn-primary">Sign Up</button></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        </form>
+        <button style="font-size: 15px;" type="button" class="btn btn-lg btn-success" routerLink="/login">Already Have An Account?</button>
+        
+    </div>
+    
+

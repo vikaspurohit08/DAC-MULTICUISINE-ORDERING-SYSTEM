@@ -1,0 +1,82 @@
+<div>
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" routerLink="restaurants">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active" class="dropdown-menu" role="menu">Category</li>
+            <!-- <ul class="dropdown-menu" role="menu"> -->
+                <li><a href="#">Name</a></li>
+                <li><a href="#">Price</a></li>
+                <li><a href="#">Rating</a></li>
+            <!-- </ul> -->
+            
+        </ul>
+        <form class="navbar-form navbar-left" #searchform="ngForm" (ngSubmit)="search(searchform)" role="search">
+            <div class="form-group">
+                <input type="text" ngModel name="searchform" id="searchbox" class="form-control" placeholder="Search Restaurant">
+            </div>
+            <button type="submit" (click)="search(searchform)" class="btn btn-default">Search</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li class="dropdown">
+                <a routerLink="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort By</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Rating</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+
+
+
+<div style="padding-left: 60px;padding-top: 50px;padding-right: 70px;padding-bottom:50px">
+   
+    <table style="width: 100%;height: 100%;">
+   <tr>
+       <td colspan="3" style="text-align: center;">
+    <h1>RESTAURANTS</h1>
+</td>  
+</tr>
+   <br>
+   <br>
+        <tr >
+       <div class="row">
+       <div class="col-sm-3" *ngFor="let rest of restaurants">
+       <td style="height: 250px;padding-left: 20px;"><img class="restaurants" style="width: 250px;height: 240px;" src="data:image/gif;base64,{{rest.rest_image}}" routerLink="/fooditems/{{rest.rest_id}}">
+    </td>
+    <span style="font-size: 20px;color: grey;width: 100%;padding-left: 80px;">{{rest.rest_name}}</span>
+    <br>
+    <br>
+    <br>
+
+        </div>
+       <!-- <td style="width: 30px;"></td> <td style="height: 250px;"><img class="restaurants" style="width: 250px;height: 240px;" src="../../assets/CAMP.jpg" routerLink="/fooditems"></td>
+   </tr> -->
+</div>   
+</tr>
+
+</table>
+</div><!-- <td style="width: 30px;"></td> <td style="height: 250px;"><img class="restaurants" style="width: 250px;height: 240px;" src="../../assets/CAMP.jpg" routerLink="/fooditems"></td>
+</tr> -->
+
+
+
+</div>

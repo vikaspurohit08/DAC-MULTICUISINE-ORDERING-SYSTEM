@@ -1,0 +1,93 @@
+
+<form  #myform="ngForm" (ngSubmit)="add(myform)" enctype="multipart/form-data" class="form-inline" role="form">
+<div class="table-responsive" style="padding-top: 20px;">
+    <table class="table table-hover" style="width: 95%;">
+        <thead>
+            <tr>
+                <h2 style="padding-left: 50px;">Add Restaurant</h2>
+            </tr>
+        </thead>
+        <tbody>
+           <tr><td style="width: 57%;padding-left: 100px;text-align: right;padding-top: 30px;"> 
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant Name</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restname" name="rest_name"></td>
+            </tr>
+            <br>
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant Street</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="reststreet" name="street"></td>
+            </tr>
+            <br>
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant Area</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restarea" name="area"></td>
+            </tr>
+            <br>
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant City</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restcity" name="city"></td>
+            </tr>
+            <br>
+             <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant Type</td><td><select ngModel style="margin-left: 30px;margin-top: 10px;" name="rest_type" ng-model="type">
+                    <option *ngFor="let type of resttype" value="{{type}}">{{type}}</option>
+                </select></td>
+            </tr>            
+            <br>
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Restaurant Contact</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restcont" name="rest_contact"></td>
+            </tr>
+            <br>
+            <tr>
+                <td style="padding-top: 10px;width: 200px;">Email Address</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="rest_email" name="rest_email"></td>
+            </tr>
+        </td>
+            <td style="padding-left: 10px;margin-right: 10px;margin-left: 10px;">
+                <div id="imgpreview" style="margin-left: 70px;" class="circle"><img style="height: 100%;width: 100%;" class="circle" [src]="imgUrl"></div>
+                <br>
+                <br>
+                <tr>
+                <td><span style="text-align: right;"><h5>Add Your Restaurant Image</h5></span></td><td><input (change)="onSelect($event)" accept="image/*" class="form-control" style="padding-left: 20px;padding-top: 8px;" type="file" id="restimg" name=rest_image ></td>
+                </tr>
+            </td>
+        </tr>
+
+        
+<tr><td style="padding-left: 100px;">
+
+        <br>
+        <tr>
+            <td><button style="margin-left: 350px;" class="btn btn-primary" type="submit">Add Restaurant</button></td>
+        </tr>
+    </td></tr>
+</tbody>
+    </table>
+</div>
+
+<!-- ------------------------------------- Adding Food Items--------------------------------------- -->
+
+
+
+<a style="margin-left: 100px;" id="show" data-toggle="collapse" data-target="#addfood" class="btn btn-warning" role="button">Add Food Items</a>
+<form #foodform="ngForm" (ngsubmit)="insert(foodform)" class="form-inline" role="form2">
+    <table> 
+    <div class="collapse" id="addfood">
+                <td style="padding-left: 100px;">
+                    <tr>
+                            <td style="padding-top: 10px;width: 200px;text-align: right;">Food Name</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="foodname" name="item_name"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                            <td style="padding-top: 10px;width: 200px;text-align: right;">Food Category</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="category" name="category"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                            <td style="padding-top: 10px;width: 200px;text-align: right;">Unit Price</td><td><input ngModel style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="unitprice" name="unit_price"></td>
+                    </tr>
+                    <br>
+                <tr><td rowspan="3" style="padding-left: 300px;"><button (click)="insert(foodform)" class="btn btn-warning" type="submit">Add Food</button></td><td><button type="reset" style="margin-left: 20px;" id="hide" data-toggle="collapse" data-target="#addfood" class="btn btn-danger">Cancel</button></td></tr>
+                    <br>
+                    
+        </td></div> 
+    </table>
+</form>
+<br>
+<br>
+<br>

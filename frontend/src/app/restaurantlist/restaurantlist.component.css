@@ -1,0 +1,8 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.restaurants:hover {
+    opacity: 0.7;
+}
+

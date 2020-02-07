@@ -1,0 +1,49 @@
+<br>
+
+<h2 style="padding-left: 600px;">HISTORY</h2>
+<hr>
+
+<form #cartForm="ngForm" (ngSubmit)="cart(cartForm)" class="form-inline" >
+    <table style="margin-left: 100px;" class="table table-striped table-hover">
+        <tr *ngFor="let order of orderlist">
+            <td>
+                Order Id : 
+                {{order.o_id}}
+                <tr *ngFor="let fooditems of order.fooditems">
+                    <td style="width: 200px;">
+                        Category :  
+                        {{fooditems.category}}
+                    </td>
+                    
+                    <td style="width: 200px;">
+                        Name :  
+                        {{fooditems.item_name}}
+                    </td>
+                    
+                    <td style="width: 100px;">
+                        Price :
+                        {{fooditems.unit_price}}
+                    </td>
+                    
+                    <td style="width: 100px;">
+                        Quantity : 
+                        {{order.quantity}}
+                    </td>
+                    <td style="width: 200px;">
+                        Status : 
+                        {{order.o_status}}
+                    </td>
+
+                    <td>Total : 
+                        {{order.quantity*fooditems.unit_price}}
+                    </td>
+                    
+                    <br>
+                    <br>
+                </tr>
+                
+                <hr>
+            </td>
+        </tr>
+    </table>
+</form>

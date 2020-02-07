@@ -1,0 +1,20 @@
+<div class="table-responsive" style="text-align: center;margin-left: 400px;margin-top: 0px;margin-right: 400px;">
+        <form #otpForm="ngForm" (ngSubmit)="otp(otpForm)" class="form-inline" role="form" id="otp">
+        <table class="table table-hover">
+            <thead>
+                <tr><td colspan="2" style="text-align: center;"><img style="width: 150px;height: 150px;" src="../../assets/food (1).jpg"></td></tr>
+                <tr><td colspan="2"><h1 style="text-align:center;font-size: 30px;">Otp Verification</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size: 18px;text-align: start;padding-top: 15px;margin-top: 20px;">Enter OTP</td>
+                    <td><input class="form-control" ngModel name="otp" type="text" required="required"  id="otp" placeholder="Enter Otp Here"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" ><button style="font-size: 15px;" type="submit" class="btn btn-primary">Verify OTP</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+    

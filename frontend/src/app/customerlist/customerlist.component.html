@@ -1,0 +1,40 @@
+<br>
+
+<h2 style="padding-left: 600px;">CUSTOMERS</h2>
+<hr>
+
+<form #custForm="ngForm" class="form-inline" >
+    <table style="margin-left: 50px;" class="table table-striped table-hover">
+        <tr *ngFor="let cust of customerlist">
+            
+            <td style="width: 150px;">
+                Customer Id : 
+                {{cust.u_id}}
+            </td>
+            <td style="width: 200px;">
+                First Name :  
+                {{cust.firstname}}
+            </td>
+            
+            <td style="width: 200px;">
+                Last Name :  
+                {{cust.lastname}}
+            </td>
+            
+            <td style="width: 300px;">
+                email :
+                {{cust.email}}
+            </td>
+            
+            <td style="width: 200px;">
+                contact : 
+                {{cust.contact}}
+            </td>
+            
+            <input type="button" class="btn btn-danger" (click)="blockUser(cust.u_id)" value="BLOCK">
+                
+            <hr>
+            
+        </tr>
+    </table>
+</form>

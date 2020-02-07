@@ -1,0 +1,33 @@
+<br>
+<h2 style="text-align: center;">ORDERS</h2>
+<br>
+<div class="table-responsive">
+    <table class="table table-hover" border="1" style="text-align: center;">
+        <thead>
+            <tr>
+                <th style="text-align: center">Order Id</th>
+                <th style="text-align: center">Customer Name</th>
+                <th style="text-align: center">Restaurant Name</th>
+                <th style="text-align: center">Items</th>
+                <th style="text-align: center">Quantity</th>
+                <th style="text-align: center">Order Date</th>
+                <th style="text-align: center">Order Time</th>
+                <th style="text-align: center">Delivery Time</th>
+                <th style="text-align: center">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{order.o_id}}</td>
+                <td>{{order.user.firstname + " " + order.user.lastname}}</td>
+                <td>{{order.restaurant.rest_name}}</td>
+                <td>{{order.fooditems[0].item_name}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.o_date}}</td>
+                <td>{{order.o_time}}</td>
+                <td>{{order.d_time}}</td>
+                <td>{{order.o_status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,190 @@
+
+<form action="" method="POST" class="form-inline" role="form">
+    <div class="table-responsive" style="padding-top: 20px;height: 100%;width: 100%;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <h2 style="padding-left: 50px;">Update Restaurant</h2>
+                </tr>
+            </thead>
+            <tbody>
+               <tr><td style="width: 57%;padding-left: 100px;text-align: right;padding-top: 30px;"> 
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Restaurant Name</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restname" [(ngModel)]="restaurant.rest_name" name="restname"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Restaurant Street</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="reststreet" [(ngModel)]="restaurant.location.street" name="reststreet"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Restaurant Area</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restarea" [(ngModel)]="restaurant.location.area" name="restarea"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Restaurant City</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" id="restcity" [(ngModel)]="restaurant.location.city.city" name="restcity"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Restaurant Contact</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" [(ngModel)]="restaurant.rest_contact" id="restcont" name="restcont"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td style="padding-top: 10px;width: 200px;">Email Address</td><td><input style="margin-left: 30px;width: 350px;" type="text" class="form-control" required="required" [(ngModel)]="restaurant.rest_email" id="restemail" name="restemail"></td>
+                </tr>
+            </td>
+                <td style="padding-left: 30px;">
+                    <div style="margin-left: 70px;" class="circle"><img id="img" class="circle" src="data:image/gif;base64,{{restaurant.rest_image}}"></div>
+                    <br>
+                    <!-- <tr>
+                    <td><span style="text-align: right;"><h4>Change Restaurant Image</h4></span></td><td><input style="padding-left: 20px;padding-top: 8px;" type="file" id="restimg" name="restimg"></td>
+                    </tr> -->
+                </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+                <td colspan="2">
+            <div style="background-color: skyblue;margin-left:50px ;margin-right: 50px;width: 100%;border-style: solid;">
+            
+            <h3 style="text-align: center;border-style:groove;">Food Items</h3>
+            <tr>
+            
+                
+
+                <div class="row">
+                    <div class="col-sm-5" *ngFor="let item of fooditems">    
+        <td style="padding-left: 10px;padding-right: 10px;width: 200px">
+            
+            <div  style="padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;border-style:outset;">
+            <tr>
+                <td style="padding-left: 10px;width: 100px;text-align: center;">
+                    {{item.item_name}}
+                </td>
+                <td style="padding-left: 10px;width: 100px;text-align: center;">
+                    {{item.category}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top:10px;text-align: center;width: 100%;text-align: center;">
+                    {{item.unit_price}}
+                </td>
+            </tr>
+            <hr>
+            <br>
+            <tr>
+                    <td style="padding-left: 15px;">
+                        <a class="btn btn-warning" href='#modal-id' (click)="update(item.fi_id)" data-toggle="modal" role="button">Update</a>
+                    </td>
+                    <td style="padding-left: 10px;">
+                        <a class="btn btn-danger"  role="button">Delete</a>
+                    </td>
+                </tr>
+            </div>
+        </td>
+        
+                    </div>
+                </div>
+    </tr>
+
+
+            </div>
+    
+        </td>
+    
+    </tr>
+
+
+
+            <br>
+            <br>
+            <a style="margin-left: 100px;" id="show" data-toggle="collapse" data-target="#addfood" class="btn btn-warning" role="button">Add Food Items</a>
+            
+            <div class="collapse" id="addfood">
+                    <form #foodform="ngForm" (ngsubmit)="insert(foodform)" class="form-inline" role="form2">
+                    <td style="padding-left: 100px;">
+                        <tr>
+                                <td style="padding-top: 10px;width: 200px;text-align: right;">Food Name</td><td><input style="margin-left: 30px;width: 350px;" ngModel type="text" class="form-control" required="required" id="foodname" name="item_name"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                                <td style="padding-top: 10px;width: 200px;text-align: right;">Food Category</td><td><input style="margin-left: 30px;width: 350px;" ngModel type="text" class="form-control" required="required" id="category" name="category"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                                <td style="padding-top: 10px;width: 200px;text-align: right;">Unit Price</td><td><input style="margin-left: 30px;width: 350px;" ngModel type="text" class="form-control" required="required" id="unitprice" name="unit_price"></td>
+                        </tr>
+                        <br>
+                    <tr><td rowspan="3" style="padding-left: 300px;"><a class="btn btn-warning" (click)="insert(foodform)" role="button">Add Food</a></td><td><button type="button" style="margin-left: 20px;" id="hide" data-toggle="collapse" data-target="#addfood" class="btn btn-danger">Cancel</button></td></tr>
+                        <br>
+                        
+            </td>
+                    </form>
+        </div>
+            
+            <br>
+            
+            
+            
+            <tr>    
+              <br>  
+            <tr>
+                <td><a style="margin-left: 470px;" (click)="updaterest()" class="btn btn-primary" routerLink="#" role="button">Save</a></td>
+            </tr>
+        <td rowspan="3" style="padding-top: 116px;">  
+    </tbody>
+        </table>
+    </div>
+    
+                
+    </form>
+    
+
+    <!-- Update Food Items Form -->
+    
+    <div class="modal fade" id="modal-id">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Update Food Item</h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td style="padding-left: 20px;">
+                                Item Name
+                            </td>
+                            <td style="padding-left: 20px;padding-bottom: 10px;">
+                                        <input type="text" [(ngModel)]="updateitem.item_name" id="item_name" class="form-control" required="required">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                                <td style="padding-left: 20px;">
+                                        Category
+                                    </td>
+                                    <td style="padding-left: 20px;padding-bottom: 10px;">
+                                        <input type="text" [(ngModel)]="updateitem.category" id="price" class="form-control" required="required">
+                                    </td>
+                            </tr>
+                        
+                        
+                        <tr>
+                            <td style="padding-left: 20px;">
+                                    Item Price
+                                </td>
+                                <td style="padding-left: 20px;">
+                                        <input type="number" [(ngModel)]="updateitem.unit_price" id="price" class="form-control" required="required">
+                                </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="updatefood()" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    

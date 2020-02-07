@@ -1,0 +1,40 @@
+<div class="table-responsive" style="text-align: center;margin-left: 400px;margin-top: 0px;margin-right: 300px;">
+        <form #myForm="ngForm" (ngSubmit)="add(myForm)" class="form-inline" role="form">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><img style="width: 150px;height: 150px;" src="../../assets/food (1).jpg"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><h1 style="text-align:start;font-size: 30px;">Address Details</h1></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Street</td>
+                    <td><input class="form-control" ngModel name="street" required="required" type="text"  id="street" placeholder="Enter Street Name"></td>
+                </tr>
+                <tr> 
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Area</td>
+                    <td><input class="form-control" ngModel name="area" required="required" type="text"  id="area" placeholder="Enter Area"></td>
+                </tr>
+                <!-- <tr> 
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">City</td>
+                    <td><input class="form-control" name="city" type="text" required="required"  id="city" placeholder="Enter City"></td>
+                </tr>
+                <tr> 
+                    <td style="font-size: 18px;text-align: end;padding-top: 15px;margin-top: 20px;">Pin-Code</td>
+                    <td><input class="form-control" name="pincode" type="number" required="required"  id="pincode" placeholder="Enter Pincode"></td>
+                </tr> -->
+                
+                <tr>
+                    <td colspan="2" style="padding-top: 10px;padding-bottom: 10px;"><button style="font-size: 15px;" type="submit" class="btn btn-primary">Submit</button></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        </form>
+        
+    </div>
+    
+

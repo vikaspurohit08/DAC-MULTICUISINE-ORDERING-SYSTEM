@@ -1,0 +1,93 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    width: 200vh;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+</style>
+
+<!-- Toolbar -->
+
+<div class="container-fluid">
+  <div class="toolbar" role="banner">
+    <li *ngIf="!isLogin"><a style="color: white; font-size: 17px; position: relative; left: 1200px;"
+        routerLink="/signup">Sign Up</a></li>
+
+
+    <li *ngIf="!isLogin"><a style="color: white; font-size: 17px; position: relative; left: 1050px;"
+        routerLink="/login">Login</a></li>
+    <li *ngIf="isLogin">
+      <a style="color: white; font-size: 17px; position: relative; left: 1050px;" (click)="logout()">Logout</a>
+    </li>
+    <li *ngIf="isLogin">
+      <a style="color: white; font-size: 17px; position: relative; left: 900px;" routerLink="/cart">Cart</a>
+    </li>
+    <li *ngIf="isLogin">
+      <a style="color: white; font-size: 17px; position: relative; left: 750px;" routerLink="/history">History</a>
+    </li>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
+
+<div class="panel panel-default" style="bottom: 0;">
+  <div class="panel-footer" style="text-align: left;">
+    <img src="../assets/food (1).jpg" style="width: 35px;height: 35px;" alt="image here">&nbsp; &nbsp;
+    <a href="aboutUs" style="color: white;">About Us</a> &nbsp; &nbsp;
+    <a href="contactUs" style="color: white;">Contact Us</a> &nbsp; &nbsp;
+    <a href="termsandconditions" style="color: white;">Terms & Conditions</a>
+  </div>
+</div>
